@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+/* Utility Classes */
+
+/* Button hover effect */
+
+.my-btn {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.my-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    top: 0;
+    left: -100%;
+    transition: left 0.3s;
+    border-radius: 50px;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.my-btn:hover::before {
+    left: 0;
+    visibility: visible;
+}
+
+.my-btn:hover {
+    background-color: var(-bs-primary);
+    transform: scale(1.05);
+}
+
+.my-btn:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section Start */
+
+.hero-header {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.hero-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../img/i2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    /* filter: blur(4px); */
+
+}
+
+.hero-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0000007d;
+    z-index: 1;
+    /* filter: blur(4px); */
+}
+
+.hero-header .content {
+    position: relative;
+    z-index: 9;
+}
+
+.top-navbar {
+    background-color: white;
+}
+
+.navbar-link {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.navbar-link::before,
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    transition: transform 0.3s;
+}
+
+.navbar-link::before {
+    bottom: 0;
+    transform: scaleX(0);
+}
+
+.navbar-link::after {
+    top: 100%;
+    transform: scaleX(0);
+}
+
+.navbar-link:hover::before {
+    transform: scaleX(1);
+    /* Scale the line to 1 on hover */
+}
+
+.navbar-link:hover::after {
+    transform: scaleX(1);
+    /* Scale the line to 1 on hover */
+}
+
+/* Optional: Change text color on hover */
+.navbar-link:hover {
+    color: var(--bs-info);
+    /* Change text color on hover */
+}
+
+.hero-heading {
+    font-size: 4.3rem;
+    color: var(--bs-white);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
